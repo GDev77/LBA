@@ -32,25 +32,62 @@
 <p>Using: windows,IOCP,c++,mysql,TCP/IP,distributed server(patch,main,GUID),multi-thread<br><br>
 - rune,mastery,init-item,core-item,skill-level-up,item-build unique binary data is saved to mysql for optimal patch data. ex) core-item binary data size is maximum 32 byte.<br>
 - main server using multi-thread for collect data(60 FPS,11 regional-thread for json-query and insert mysql)<br>
-- static data and champion build data export program</p>
+- main server using IOCP for client packet communication.<br>
+- static data and champion build data export program. static data missing parameter is corrected by this program.</p>
 <p><img src="image/LBA_S02.jpg"><br>
-this screen-shot showing static data and champion build data export program, export program also using multi-thread for analyze and save file, <br>
+this screen-shot showing static data and champion build data export program, export program also using multi-thread for analyze match data and save file, <br>
 11 region, 353172 matches analyzed durnig 3 minutes.
 </p>
 <p><img src="image/LBA_S01.jpg" style="border:1px solid gray"><br>
 this screen-shot showing analyzing result files. 353172 matches analyzed to these files completely.<br>
-these file will pre-downloaded to mobile-app by patch-server for fast access.
+these file will pre-downloaded to mobile-app by patch-server for fast access.<br>
+total size: 5.14mb, zip size: 1.8mb
 </p>
 
 <h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Client Specification(ver 1.0)</h3>
 
-<p>You can <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Using: Unity 5 Pro,TCP/IP<br><br>
+    1. Champion Build(progressing..)<br>
+    - loading from pre-downloaded file. so no internet access required.<br>
+    - champion grid/list view mode<br>
+    - sort option(region,version) - match count view<br>
+    - select role and champion<br>
+        (a) overview screen view summary build infos<br>
+        (b) rune,mastery,item,skill.. detail view sort by most,winrate,kda<br>
+        (c) you will pick vs champion opponent and result will viewing a) and b) for vs specific opponent champion<br>
+    - counter pick mode(you will select opponent champion first, and seeing winrate datas for vs this champion. if you pick your champion (c) will see.)<br>
+    <img src="image/LBA_CB01.jpg"><img src="image/LBA_CB02.jpg"><img src="image/LBA_CB03.jpg">
+</p>
+<p>2. Static Data<br>
+    - loading from corrected pre-downloaded file. so no internet access required.<br>
+    - champion(Abilities,Statistics,Lore,Tip,Recommend Item,Skin)<br>
+    - item(sort option:map,group)<br>
+    - mastery<br>
+    - rune(sort option:type,effect,tier)<br>
+    - summoner spell<br>
+    - all region language support<br>
+    <img src="image/LBA_01.jpg"><img src="image/LBA_02.jpg"><img src="image/LBA_03.jpg"><img src="image/LBA_04.jpg"><img src="image/LBA_05.jpg"><img src="image/LBA_06.jpg">
+    <img src="image/LBA_07.jpg"><img src="image/LBA_08.jpg"><img src="image/LBA_09.jpg"><img src="image/LBA_10.jpg"><img src="image/LBA_11.jpg"><img src="image/LBA_12.jpg">
+    <img src="image/LBA_13.jpg"><img src="image/LBA_14.jpg"><img src="image/LBA_15.jpg"><img src="image/LBA_16.jpg"><img src="image/LBA_17.jpg"><img src="image/LBA_18.jpg">
+</p>
+<p>3. Rune Management(implement or not at ver 1.0)<br>
+    - own rune and own champion save(local save at ver1.0.. later version will save to account server db<br>
+    - prefered champion and role select option<br>
+    - compute rune pages via own rune and champion and options by pre-downloades match datas<br>
+</p>
+<p>4. Patch System
+</p>
 
 <h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Later Version Plan</h3>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+<p> - server account login system(5 summoner available for management.. summoner quick change by menu<br>
+    - online request for pro recent match datas,summoner match history etc...<br>
+    - summoner champion mastery(crafting system) and stats online request<br>
+    - LCS and LCK etc pro-match recent build data(if this implement, this data will pre-download support like champion build data)<br>
+    - etc...<br>
+</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/GDev77/LBA">Lba</a> is maintained by <a href="https://github.com/GDev77">GDev77</a>.</span>
