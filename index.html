@@ -22,18 +22,25 @@
         <h3>
            General Specification</h3>
 
-<p>LBA is mobile app by TCP/IP connect for optimal data and fast interactive. not just website viewing app.<br>
-LBA have pre-downloaded data(champion build,static datas) for fast access. don't wait result website page for champion pick screen. if you click champion icon then build reference page will view immediately.<br>
-LBA will manage your rune-page settings. compute optimal rune page settings by downloaded build data. (require own champion and rune check, and setting compute options..)</p>
+<p>- LBA is mobile app by TCP/IP connect for optimal data and fast interactive. not just website viewing app.<br>
+- LBA have pre-downloaded data(champion build,static datas) for fast access. don't wait result website page for champion pick screen. if you click champion icon then build reference page will view immediately.<br>
+- LBA will manage your rune-page settings. compute optimal rune page settings by downloaded build data. (require own champion and rune check, and setting compute options..)</p>
 
 <h3>
 <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Server Specification</h3>
 
 <p>Using: windows,IOCP,c++,mysql,TCP/IP,distributed server(patch,main,GUID),multi-thread<br><br>
-rune,mastery,init-item,core-item,skill-level-up,item-build unique binary data is saved to mysql for optimal patch data. ex) core-item binary data size is maximum 32 byte.
-main server using multi-thread for collect data(60 FPS,11 regional-thread for json-query and insert mysql)
-static data and champion build data export program</p>
-<p><img src="image/LBA_S02.jpg"></p>
+- rune,mastery,init-item,core-item,skill-level-up,item-build unique binary data is saved to mysql for optimal patch data. ex) core-item binary data size is maximum 32 byte.<br>
+- main server using multi-thread for collect data(60 FPS,11 regional-thread for json-query and insert mysql)<br>
+- static data and champion build data export program</p>
+<p><img src="image/LBA_S02.jpg"><br>
+this screen-shot showing static data and champion build data export program, export program also using multi-thread for analyze and save file, <br>
+11 region, 353172 matches analyzed durnig 3 minutes.
+</p>
+<p><img src="image/LBA_S01.jpg"><br>
+this screen-shot showing analyzing result files. 353172 matches analyzed to these files completely.<br>
+these file will pre-downloaded by mobile-app for fast access.
+</p>
 
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
